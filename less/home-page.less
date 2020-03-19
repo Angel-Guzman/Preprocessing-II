@@ -1,51 +1,93 @@
 .home {
 
+  .navigation {
+    @media @mobile {
+      display: flex;
+      flex-direction: column;
+    }// navigation mobile media query
+  }//navigation ends
+
+  .header-section {
+    border-bottom: 2px dashed @navigation-border;
+    @media @mobile {
+      .wargin();
+    }
+    .text-content{
+      margin: 10px 0;
+    }//header text ends
+}//header ends
+
   .content-section {
     margin: 30px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 
-   
-    
     .text-content {
       width: 48%;
       padding-right: 1%;
+      @media @mobile {
+        width: 100%;
+      }
     }
 
     .img-content {
       width: 48%;
       padding-left: 1%;
-
+      @media @mobile {
+        padding: 0;
+        width: 90%;
+      }//img content mobile media query
       img {
         border-radius: 10px;
       }
-    }
-  }
+    }//img-content end
+    @media @mobile {
+      .wargin();
+      flex-direction: column;
+      align-items: center;
+    }// content mobile media query
+  }//content-section end
 
   .inverse-content {
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
 
+
+
     .text-content {
       padding-left: 1%;
       padding-right: 0;
-    }
+      @media @mobile {
+        width: 100%;
+        margin-top: 2%;
+      }//mobile text-content end
+    }//text-content end
 
     .img-content {
       padding-right: 1%;
       padding-left: 0;
     }
-  }
+  @media @mobile {
+      .wargin();
+      flex-direction: column;
+      align-items: center;
+    }// inverse-content mobile media query
+}//inverse-content ends    
 
   .content-destination {
     width: 75%;
     margin: 0 auto 30px;
-
+    @media @mobile {
+      .wargin();
+      flex-direction: column;
+      align-items: center;
+    }//mobile content-destination end
     img {
       border-radius: 10px;
     }
-  }
+
+  }//content-destination end
 
   .content-pick {
     padding-top: 30px;
@@ -53,9 +95,30 @@
     display: flex;
     justify-content: space-between;
 
+    @media @mobile {
+      .wargin();
+      flex-direction: column;
+      align-items: center; 
+}//mobile content-pick end
     .destination {
       width: 30%;
       margin-bottom: 30px;
-    }
-  }
+      @media @mobile {
+        width: 100%;
+        align-items: center;
+      }//mobile destination end
+    }//destination end
+    .btn {
+      .btn-mixin();
+      .btn-animation();
+      @media @mobile {
+        .btn-animation();
+        background-color: #4682B4;
+        width: 90%;
+      }//mobile button ends
+    }//btn mixin ends
+  }//content pick ends
+
+
+
 }// home
